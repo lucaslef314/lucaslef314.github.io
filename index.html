@@ -1,31 +1,88 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Site Title</title>
-    <meta name="description" content="A short description of the site.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico">
-</head>
-<body>
-    <header>
-        <h1>Site Title</h1>
-        <nav>
-            <!-- Add navigation links here -->
-        </nav>
-    </header>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Lucas Lef — Portfolio</title>
+        <meta name="description" content="Portfolio of Lucas Lef — projects, about me and contact.">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
 
-    <main>
-        <section id="intro">
-            <p>Welcome — replace this with your content.</p>
-        </section>
-    </main>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="#home">Lucas Lef</a>
+                <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                    ☰
+                </button>
+                <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><button id="theme-toggle" class="theme-toggle" aria-pressed="false">🌙</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-    <footer>
-        <p>&copy; 2025</p>
-    </footer>
+        <main id="main">
+            <section id="home" class="hero">
+                <div class="container">
+                    <h1>Hello — I'm Lucas</h1>
 
-    <script src="script.js" defer></script>
-</body>
+                     <h2>I'm passionate about <span id="changing-text"></span><span class="cursor">|</span></h2>
+                    <p><a class="cta" href="#projects">See my projects</a></p>
+                </div>
+            </section>
+
+            <section id="about" class="about container">
+                <h2>About</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I'm a student focused on software engineering and web development. I enjoy building small projects to learn new tools and improve my craft.</p>
+                        <p>Skills: JavaScript, HTML, CSS, Python, Git, algorithms.</p>
+                    </div>
+                    <div class="about-photo" aria-hidden="true">
+                        <!-- Placeholder for photo -->
+                        <div class="avatar">LL</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="projects container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <article class="project">
+                        <h3>Project One</h3>
+                        <p>Short description of project one. Link to repo or live demo.</p>
+                        <p><a href="#">View project</a></p>
+                    </article>
+                    <article class="project">
+                        <h3>Project Two</h3>
+                        <p>Short description of project two. Link to repo or live demo.</p>
+                        <p><a href="#">View project</a></p>
+                    </article>
+                    <article class="project">
+                        <h3>Project Three</h3>
+                        <p>Short description of project three. Link to repo or live demo.</p>
+                        <p><a href="#">View project</a></p>
+                    </article>
+                </div>
+            </section>
+
+      
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; <span id="year">2025</span> Lucas Lef</p>
+                <p><a href="https://github.com/lucaslef314" target="_blank" rel="noopener">GitHub</a></p>
+            </div>
+        </footer>
+
+        <script src="script.js" defer></script>
+    </body>
 </html>
