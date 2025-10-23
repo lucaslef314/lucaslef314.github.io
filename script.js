@@ -44,9 +44,9 @@ const textElement = document.getElementById("changing-text");
 let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
-let delay = 150;
+let delay = 0;
 
-let SPEED = 100; // typing speed in ms
+let SPEED = 80; // typing speed in ms
 
 function type() {
   const currentWord = words[wordIndex];
@@ -74,5 +74,38 @@ function type() {
 
   setTimeout(type, delay);
 }
+
+const counters = document.querySelectorAll('.counter');
+const options = { threshold: 0.5 };
+
+const startCounter = (entry) => {
+  const counter = entry.target;
+  const target = +counter.getAttribute('data-target');
+  let count = 0;
+  const increment = target / 100.;
+
+  const update = () => {
+    count += increment;
+    if(count < target) {
+      counter.innerText = Math.ceil(count);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  update();
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      startCounter(entry);
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+counters.forEach(counter => observer.observe(counter));
+
 
 type();
