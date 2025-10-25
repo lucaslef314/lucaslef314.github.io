@@ -28,7 +28,11 @@
 	 -webkit-font-smoothing:antialiased;
  }
  
- .container{max-width:1000px;margin:0 auto;padding:2rem}
+ .container{
+  max-width:1000px;
+  margin:0 auto;
+  padding:2rem}
+
  .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
  .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:var(--accent);color:white;padding:.5rem;border-radius:4px}
  
@@ -49,8 +53,7 @@
  
  .about{padding:3rem 0}
  .about-grid{display:grid;grid-template-columns:1fr 160px;gap:1.5rem;align-items:center}
- .avatar{width:120px;height:120px;border-radius:12px;background:var(--surface);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);font-size:1.25rem}
- 
+
 .projects {
   display: flex;
   flex-direction: column;
